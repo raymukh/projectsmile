@@ -157,13 +157,15 @@ a:focus {
 
 .site-nav a:hover::after,
 .site-nav a:focus::after,
-.site-nav a.active::after {
+.site-nav a.active::after,
+.site-nav a.current::after {
   transform: scaleX(1);
 }
 
 .site-nav a:hover,
 .site-nav a:focus,
-.site-nav a.active {
+.site-nav a.active,
+.site-nav a.current {
   color: var(--primary);
 }
 

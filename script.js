@@ -1,6 +1,9 @@
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
+const pageLinks = Array.from(document.querySelectorAll('.site-nav a[data-page]'));
+const allNavLinks = Array.from(document.querySelectorAll('.site-nav a'));
+const hashLinks = Array.from(document.querySelectorAll('a[href^="#"]:not(.skip-link)'));
 const yearEl = document.getElementById('year');
 const statElements = Array.from(document.querySelectorAll('.stat'));
 const animateElements = Array.from(document.querySelectorAll('[data-animate="fade-in"], .hero-card, .program-card, .event-card, .testimonial-grid figure'));
@@ -44,6 +47,15 @@ const highlightActiveLink = () => {
     } else {
       link.classList.remove('active');
     }
+  });
+};
+
+const setActivePageLink = () => {
+  const currentPage = document.body.dataset.page;
+  if (!currentPage) return;
+
+  pageLinks.forEach((link) => {
+    link.classList.toggle('current', link.dataset.page === currentPage);
   });
 };
 
@@ -122,12 +134,21 @@ const handleContactSubmit = (event) => {
 
 const init = () => {
   setCurrentYear();
+  setActivePageLink();
 
   if (navToggle) {
     navToggle.addEventListener('click', toggleNav);
   }
 
-  navLinks.forEach((link) => link.addEventListener('click', handleLinkClick));
+  hashLinks.forEach((link) => link.addEventListener('click', handleLinkClick));
+
+  allNavLinks.forEach((link) =>
+    link.addEventListener('click', () => {
+      if (!navToggle || !siteNav) return;
+      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('open');
+    })
+  );
 
   highlightActiveLink();
   animateStats();
