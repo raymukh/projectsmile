@@ -351,7 +351,7 @@ a:focus {
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, rgba(85, 60, 154, 0.55), rgba(255, 138, 128, 0.55)),
-    url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80') center/cover;
+    url('https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=900&q=80') center/cover;
   box-shadow: var(--shadow);
 }
 

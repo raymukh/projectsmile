@@ -104,7 +104,7 @@ const handleNewsletterSubmit = (event) => {
     return;
   }
 
-  feedback.textContent = 'Thanks for subscribing! Check your inbox for a welcome email.';
+  feedback.textContent = 'Placeholder: Confirm Project Smile newsletter process before publishing.';
   feedback.style.color = '#d4f4dd';
   form.reset();
 };
@@ -115,7 +115,7 @@ const handleContactSubmit = (event) => {
   const feedback = form.querySelector('.form-feedback');
 
   if (!feedback) return;
-  feedback.textContent = 'Thanks for reaching out! Our team will reply within 2 business days.';
+  feedback.textContent = 'Placeholder: Outline the exact Project Smile response timeline here.';
   feedback.style.color = 'var(--primary)';
   form.reset();
 };
