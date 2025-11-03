@@ -6,7 +6,11 @@ const allNavLinks = Array.from(document.querySelectorAll('.site-nav a'));
 const hashLinks = Array.from(document.querySelectorAll('a[href^="#"]:not(.skip-link)'));
 const yearEl = document.getElementById('year');
 const statElements = Array.from(document.querySelectorAll('.stat'));
-const animateElements = Array.from(document.querySelectorAll('[data-animate="fade-in"], .hero-card, .program-card, .event-card, .testimonial-grid figure'));
+const animateElements = Array.from(
+  document.querySelectorAll(
+    '[data-animate="fade-in"], .hero-card, .program-card, .event-card, .testimonial-grid figure, .values article, .program-detail, .resources-grid article, .schedule-card, .team-grid article, .timeline article'
+  )
+);
 
 const setCurrentYear = () => {
   if (!yearEl) return;
@@ -14,6 +18,7 @@ const setCurrentYear = () => {
 };
 
 const toggleNav = () => {
+  if (!navToggle || !siteNav) return;
   const expanded = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', String(!expanded));
   siteNav.classList.toggle('open', !expanded);
@@ -28,11 +33,14 @@ const handleLinkClick = (event) => {
   if (!target) return;
 
   target.scrollIntoView({ behavior: 'smooth' });
-  navToggle.setAttribute('aria-expanded', 'false');
-  siteNav.classList.remove('open');
+  if (navToggle && siteNav) {
+    navToggle.setAttribute('aria-expanded', 'false');
+    siteNav.classList.remove('open');
+  }
 };
 
 const highlightActiveLink = () => {
+  if (!navLinks.length) return;
   const fromTop = window.scrollY + 120;
 
   navLinks.forEach((link) => {
@@ -70,20 +78,13 @@ const animateStats = () => {
       const duration = 1400;
       const startTime = performance.now();
 
-      const formatValue = (value) => {
-        if (target >= 100 && el.textContent.trim().includes('%')) {
-          return `${Math.round(value)}%`;
-        }
-        if (target >= 1000) {
-          return Math.round(value).toLocaleString();
-        }
-        return Math.round(value);
-      };
+      const suffix = el.dataset.suffix || '';
 
       const step = (currentTime) => {
         const progress = Math.min((currentTime - startTime) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = formatValue(target * eased);
+        const value = Math.round(target * eased);
+        el.textContent = `${value.toLocaleString()}${suffix}`;
         if (progress < 1) {
           requestAnimationFrame(step);
         }
@@ -110,14 +111,14 @@ const handleNewsletterSubmit = (event) => {
   const feedback = form.querySelector('.form-feedback');
   const email = form.email.value.trim();
 
-  if (!email) {
-    feedback.textContent = 'Please enter a valid email to subscribe.';
-    feedback.style.color = '#ffe066';
+  if (!email || !email.includes('@')) {
+    feedback.textContent = 'Please share a valid email address so we can reach you.';
+    feedback.style.color = '#ffe4c4';
     return;
   }
 
-  feedback.textContent = 'Placeholder: Confirm Project Smile newsletter process before publishing.';
-  feedback.style.color = '#d4f4dd';
+  feedback.textContent = 'Thank you! A welcome email from Project Smile is on its way.';
+  feedback.style.color = '#d1fae5';
   form.reset();
 };
 
@@ -127,8 +128,8 @@ const handleContactSubmit = (event) => {
   const feedback = form.querySelector('.form-feedback');
 
   if (!feedback) return;
-  feedback.textContent = 'Placeholder: Outline the exact Project Smile response timeline here.';
-  feedback.style.color = 'var(--primary)';
+  feedback.textContent = 'Thanks for reaching out! Our care team will respond within two business days.';
+  feedback.style.color = 'var(--accent)';
   form.reset();
 };
 

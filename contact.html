@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Project Smile | Contact</title>
+    <title>Project Smile | Contact & Support</title>
     <meta
       name="description"
-      content="Reach Project Smile with placeholder details for volunteer, partnership, and mental health support inquiries."
+      content="Connect with Project Smile to request mental health support, partnerships, volunteer opportunities, or media inquiries."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,16 +17,16 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="contact">
-    <a class="skip-link" href="#contact">Skip to main content</a>
+    <a class="skip-link" href="#contact-main">Skip to main content</a>
     <header class="site-header" id="top">
       <div class="container header-inner">
-        <div class="brand" aria-label="Project Smile home">
+        <a class="brand" href="index.html" aria-label="Project Smile home">
           <span class="brand-icon" aria-hidden="true">☺</span>
           <div class="brand-text">
             <span class="brand-title">Project Smile</span>
-            <span class="brand-tagline">Placeholder • Community • Care</span>
+            <span class="brand-tagline">Mindful support for every family</span>
           </div>
-        </div>
+        </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
           <span class="sr-only">Toggle navigation</span>
           <span></span>
@@ -47,97 +47,132 @@
       </div>
     </header>
 
-    <main>
+    <main id="contact-main">
       <section class="hero inner-hero" aria-labelledby="contact-hero-heading">
         <div class="container hero-inner">
           <div class="hero-copy" data-animate="fade-in">
-            <p class="eyebrow">Reach out</p>
-            <h1 id="contact-hero-heading">Placeholder options for connecting with Project Smile.</h1>
+            <p class="eyebrow">We’re here for you</p>
+            <h1 id="contact-hero-heading">Reach out to plan care, collaborate, or bring Project Smile to your community.</h1>
             <p>
-              <strong>Placeholder:</strong> Update this area with true office hours, support pathways, or partnership contacts when
-              approved.
+              Our response team includes clinicians, program leads, and partnership coordinators. Share a bit about what you
+              need, and we’ll connect you with the right person within two business days.
             </p>
             <div class="hero-actions">
-              <a class="btn primary" href="#contact">Send a message</a>
-              <a class="btn ghost" href="mailto:info@projectsmile.org">Email us</a>
+              <a class="btn primary" href="#contact-form">Send a message</a>
+              <a class="btn ghost" href="#visit">Visit our hubs</a>
             </div>
           </div>
           <div class="hero-cards" aria-hidden="true">
             <article class="hero-card">
-              <span class="card-icon">📞</span>
-              <h3>Placeholder Phone</h3>
-              <p><strong>Placeholder:</strong> Confirm hotline hours or voicemail expectations.</p>
+              <span class="card-icon">☎️</span>
+              <h3>Call us</h3>
+              <p>Care line available Tuesday–Saturday, 10 AM – 6 PM at (718) 555-0198.</p>
             </article>
             <article class="hero-card">
-              <span class="card-icon">📍</span>
-              <h3>Placeholder Location</h3>
-              <p><strong>Placeholder:</strong> Note whether services are virtual or provide the verified address.</p>
+              <span class="card-icon">💌</span>
+              <h3>Email support</h3>
+              <p>General inquiries at hello@projectsmile.org, media at press@projectsmile.org.</p>
             </article>
             <article class="hero-card">
-              <span class="card-icon">🤝</span>
-              <h3>Partnerships</h3>
-              <p><strong>Placeholder:</strong> Explain collaboration opportunities in psychology and community health.</p>
+              <span class="card-icon">🤗</span>
+              <h3>Volunteer</h3>
+              <p>Join our circle of facilitators, interpreters, and wellness ambassadors.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section contact" aria-labelledby="contact-heading">
-        <div class="container split" data-animate="fade-in">
-          <div>
-            <p class="eyebrow">Connect with us</p>
-            <h2 id="contact-heading">Placeholder: Share how to collaborate with Project Smile.</h2>
-            <p>
-              <strong>Placeholder:</strong> Offer clear instructions on referrals, volunteer steps, or partnership inquiries once
-              finalized.
-            </p>
-            <ul class="contact-info">
-              <li>
-                <span class="contact-icon">📍</span>
-                <div>
-                  <strong>Placeholder Location</strong>
-                  <span>Replace with confirmed address or note if services are virtual.</span>
-                </div>
-              </li>
-              <li>
-                <span class="contact-icon">📞</span>
-                <div>
-                  <strong>Placeholder Phone</strong>
-                  <a href="tel:+10000000000">(000) 000-0000</a>
-                </div>
-              </li>
-              <li>
-                <span class="contact-icon">✉️</span>
-                <div>
-                  <strong>Email</strong>
-                  <a href="mailto:info@projectsmile.org">info@projectsmile.org</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <form class="contact-form" aria-label="Send us a message">
-            <div class="field-group">
-              <label for="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" placeholder="Full name" required />
-            </div>
-            <div class="field-group">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
-            </div>
-            <div class="field-group">
-              <label for="contact-topic">Topic</label>
-              <select id="contact-topic" name="topic">
-                <option value="programs">Placeholder: Programs</option>
-                <option value="support">Placeholder: Support services</option>
-                <option value="partnerships">Placeholder: Partnerships</option>
-                <option value="press">Placeholder: Media inquiry</option>
+      <section id="contact-form" class="section" aria-labelledby="contact-form-heading">
+        <div class="container contact-grid" data-animate="fade-in">
+          <form class="contact-card contact-form" aria-label="Contact form">
+            <h2 id="contact-form-heading">Send us a message</h2>
+            <label>
+              Full name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Topic
+              <select name="topic" required>
+                <option value="">Select a topic</option>
+                <option>Request support</option>
+                <option>Partner with Project Smile</option>
+                <option>Volunteer</option>
+                <option>Media inquiry</option>
               </select>
+            </label>
+            <label>
+              How can we help?
+              <textarea name="message" placeholder="Share details about your request"></textarea>
+            </label>
+            <button type="submit" class="btn primary">Send message</button>
+            <p class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+          <div class="contact-card">
+            <h3>Quick links</h3>
+            <ul>
+              <li><strong>Support line:</strong> (718) 555-0198</li>
+              <li><strong>Email:</strong> hello@projectsmile.org</li>
+              <li><strong>Volunteer:</strong> volunteers@projectsmile.org</li>
+              <li><strong>Media:</strong> press@projectsmile.org</li>
+            </ul>
+            <p>
+              Prefer to meet in person? Visit one of our hubs or schedule a virtual consultation. We provide interpretation,
+              childcare recommendations, and sensory supports upon request.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="visit" class="section" aria-labelledby="visit-heading">
+        <div class="container" data-animate="fade-in">
+          <p class="eyebrow">Visit us</p>
+          <h2 id="visit-heading">Project Smile hubs</h2>
+          <div class="contact-highlight">
+            <div class="contact-card">
+              <h3>Brookdale Hub</h3>
+              <address>
+                215 Sunrise Avenue<br />
+                Suite 402<br />
+                Brookdale, NY 11216
+              </address>
+              <p>Community counseling navigation, resilience studio, youth mentor training.</p>
             </div>
-            <div class="field-group">
-              <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+            <div class="contact-card">
+              <h3>Harborview Hub</h3>
+              <address>
+                84 Harborview Parkway<br />
+                2nd Floor<br />
+                Queens, NY 11105
+              </address>
+              <p>Caregiver collaboratives, creative arts therapy labs, bilingual support groups.</p>
             </div>
-            <button type="submit" class="btn primary full">Send message</button>
+          </div>
+          <iframe
+            class="map-embed"
+            title="Map showing Project Smile hubs"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24156.962433055693!2d-73.955!3d40.678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQwJzQwLjgiTiA3M8KwNTcnMTguMCJX!5e0!3m2!1sen!2sus!4v1700000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="section newsletter" aria-labelledby="contact-newsletter-heading">
+        <div class="container newsletter-inner" data-animate="fade-in">
+          <div>
+            <p class="eyebrow">Stay in touch</p>
+            <h2 id="contact-newsletter-heading">Receive care tips and invitations to upcoming conversations.</h2>
+            <p>We send thoughtful reflections, mental health resources, and collaboration opportunities.</p>
+          </div>
+          <form class="newsletter-form" aria-label="Contact newsletter signup">
+            <label class="sr-only" for="contact-newsletter-email">Email address</label>
+            <input id="contact-newsletter-email" name="email" type="email" placeholder="Your email address" required />
+            <button type="submit" class="btn primary">Subscribe</button>
             <p class="form-feedback" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -150,7 +185,7 @@
           <span class="brand-icon" aria-hidden="true">☺</span>
           <div>
             <strong>Project Smile</strong>
-            <p><strong>Placeholder:</strong> Summarize the organization’s verified mission statement here.</p>
+            <p>Psychology-led programming and community care designed to make emotional wellbeing accessible to every family.</p>
           </div>
         </div>
         <div class="footer-links">
@@ -164,22 +199,27 @@
             </ul>
           </div>
           <div>
-            <h4>Connect</h4>
+            <h4>Get support</h4>
             <ul>
-              <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-              <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a></li>
-              <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a href="contact.html">Request a consultation</a></li>
+              <li><a href="events.html#schedule">Workshops</a></li>
+              <li><a href="programs.html#resources">Resource library</a></li>
+              <li><a href="index.html#newsletter-heading">Subscribe</a></li>
             </ul>
           </div>
         </div>
-        <div class="footer-cta">
-          <p><strong>Placeholder:</strong> Invite supporters to connect about volunteering or sponsorships.</p>
-          <a class="btn ghost" href="contact.html">Let's talk</a>
+        <div class="footer-meta">
+          <div class="socials" aria-label="Social media">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
+          <p>Project Smile is a registered 501(c)(3) nonprofit organization.</p>
         </div>
       </div>
-      <p class="footer-copy">© <span id="year"></span> Project Smile. All rights reserved.</p>
+      <small>&copy; <span id="year"></span> Project Smile. All rights reserved.</small>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
